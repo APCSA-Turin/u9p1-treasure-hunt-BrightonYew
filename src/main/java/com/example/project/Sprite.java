@@ -8,29 +8,31 @@ public class Sprite {
         this.y = y;
     }
 
-    public int getX(){return 1;}//placeholder
-    public int getY(){return 1;}
 
-    public void setX(){}
-    public void setY(){}
+    public int getX(){return x;}//placeholder
+    public int getY(){ return y; }
 
-    public String getCoords(){ //returns the coordinates of the sprite ->"(x,y)"
-        return "";
+    public void setX(int x){ this.x = x; }
+    public void setY(int y){ this.y = y; }
+
+    public String getCoords() {  //returns the coordinates of the sprite ->"(x,y)"
+        return "(" + x + "," + y + ")"; 
     }
-
-    public String getRowCol(int size){ //returns the row and column of the sprite -> "[row][col]"
-        return "[][]";
+    public String getRowCol(int size){   //returns the row and column of the sprite -> "[row][col]"
+        return "[" + (size - y - 1) + "][" + x + "]"; 
     }
-    
+    public int getRow(int size) {
+         return (size - y - 1); 
+        }
+    public int getCol(int size) {
+         return x; 
+        }
 
     public void move(String direction) { //you can leave this empty
         // Default behavior (can be overridden by subclasses)
     }
-
     public void interact() { //you can leave this empty
-        // Default behavior (can be overridden by subclasses)
+            // Default behavior (can be overridden by subclasses)
     }
-
-
-
+    public String getEmoji() { return ""; }
 }
