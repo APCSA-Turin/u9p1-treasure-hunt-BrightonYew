@@ -8,12 +8,16 @@ public class Sprite {
         this.y = y;
     }
 
-
+    //get and set methods
     public int getX(){return x;}//placeholder
-    public int getY(){ return y; }
+    public int getY(){ return y;}
 
-    public void setX(int x){ this.x = x; }
-    public void setY(int y){ this.y = y; }
+    public void setX(int x){
+        this.x = x;
+    }
+    public void setY(int y){
+        this.y = y;
+    }
 
     public String getCoords() {  //returns the coordinates of the sprite ->"(x,y)"
         return "(" + x + "," + y + ")"; 
@@ -21,10 +25,10 @@ public class Sprite {
     public String getRowCol(int size){   //returns the row and column of the sprite -> "[row][col]"
         return "[" + (size - y - 1) + "][" + x + "]"; 
     }
-    public int getRow(int size) {
+    public int getRow(int size) { //since it is the inverse (goes from top to bottom instead of bottom to top)
          return (size - y - 1); 
         }
-    public int getCol(int size) {
+    public int getCol(int size) { //still goes from left to right
          return x; 
         }
 

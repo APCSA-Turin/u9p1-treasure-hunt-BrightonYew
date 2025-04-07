@@ -6,7 +6,7 @@ public class Dot extends Sprite{
     private String dotEmoji;
     public Dot (int x, int y) {
         super(x,y);
-        dotEmoji = "⬜";
+        dotEmoji = "⬜"; //needed for display
     }
     @Override
     public String getEmoji() {

@@ -45,7 +45,7 @@ public class Game{
                 player.setEnd(true);
             }
             
-            Object obj = new Object(); 
+            Object obj = new Object(); //used to determine interaction
             if (player.isValid(size, input)) { //gets the object in front of player based on the provided direction
                 switch(input) {
                     case "w": obj = grid.getGrid()[(size - 1)-player.getY()-1][player.getX()]; break;
@@ -54,7 +54,8 @@ public class Game{
                     case "d": obj = grid.getGrid()[(size - 1)-player.getY()][player.getX()+1]; break;
                 }
             }
-            player.interact(grid.getGrid().length, input, treasures.length, obj); //based on the object, update variables, and move player
+            player.interact(grid.getGrid().length, input, treasures.length, obj); //based on the object, update variables
+            player.move(input); //move player
             grid.placeSprite(player, input); //updates the grid to the updated information
 
             //used for debugging

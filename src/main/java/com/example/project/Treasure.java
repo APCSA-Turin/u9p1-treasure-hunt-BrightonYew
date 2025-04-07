@@ -6,10 +6,12 @@ public class Treasure extends Sprite{ //child of Sprite
 
     public Treasure(int x, int y) {
         super(x,y);
-        treasureEmoji = "🌈";
+        treasureEmoji = "🌈";//needed for display
     }
     @Override
-    public String getEmoji() {return treasureEmoji;}
+    public String getEmoji() {
+        return treasureEmoji;
+    }
 
 
 

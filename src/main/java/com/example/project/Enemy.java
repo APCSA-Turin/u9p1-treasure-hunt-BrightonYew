@@ -4,7 +4,7 @@ public class Enemy extends Sprite {  //child  of Sprite
     private String enemyEmoji;
     public Enemy(int x, int y) {
         super(x, y);
-        enemyEmoji = "🦂";
+        enemyEmoji = "🦂";//needed for display
     }
     @Override
     public String getEmoji() {

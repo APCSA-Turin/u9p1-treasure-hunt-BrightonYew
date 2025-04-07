@@ -5,9 +5,11 @@ public class Trophy extends Treasure{ //child of trophy
     private String trophyEmoji;
     public Trophy(int x, int y){
         super(x, y);
-        trophyEmoji = "🏆";
+        trophyEmoji = "🏆";//needed for display
     }
 
     @Override
-    public String getEmoji() {return trophyEmoji;}
+    public String getEmoji() {
+        return trophyEmoji;
+    }
 }

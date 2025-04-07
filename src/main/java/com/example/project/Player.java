@@ -11,7 +11,7 @@ public class Player extends Sprite {
         super(x, y);
         treasureCount = 0;
         numLives = 2;
-        playerEmoji = "🦄";
+        playerEmoji = "🦄";//needed for display
         win = false;
         end = false;
     }
@@ -44,7 +44,7 @@ public class Player extends Sprite {
         //move method should override parent class, sprite
     @Override
     public void move(String direction) { //move the (x,y) coordinates of the player
-            if (direction.equals("w")) {
+            if (direction.equals("w")) { //checks the direction, and updates the variables based on (wasd)
                 setY(getY() + 1);
             } else if (direction.equals("a")) {
                 setX(getX() - 1);
@@ -59,30 +59,30 @@ public class Player extends Sprite {
     public void interact(int size, String direction, int numTreasures, Object obj) {  // interact with an object in the position you are moving to
             //numTreasures is the total treasures at the beginning of the game
         if (isValid(size, direction)) { //checks if direction is valid
-            if (obj instanceof Enemy) { //if the obj is enemy, 
+            if (obj instanceof Enemy) { //if the obj is enemy, subtract the number of lives
                 numLives--;
                 if (numLives < 1) {
                     win = false;
                     end = true;
                 }
-                move(direction); //move(direction) is repeated so player doesn't move when interacting with trophy when requirments not met
+                //move(direction); //move(direction) is repeated so player doesn't move when interacting with trophy when requirments not met
             }
             if (obj instanceof Treasure && !(obj instanceof Trophy)) { //if the obj is a treasure, add 1 to treasurecount
                 treasureCount++;
-                move(direction); //move(direction) is repeated so player doesn't move when interacting with trophy when requirments not met
+                //move(direction); //move(direction) is repeated so player doesn't move when interacting with trophy when requirments not met
             }
-            if (obj instanceof Trophy && treasureCount == numTreasures) {
+            if (obj instanceof Trophy && treasureCount == numTreasures) { //if reach trophy and requirments for winning are met, win
                 win = true;
                 end = true;
-                move(direction);//move(direction) is repeated so player doesn't move when interacting with trophy when requirments not met
+                //move(direction);//move(direction) is repeated so player doesn't move when interacting with trophy when requirments not met
             }
             if (obj instanceof Dot) {
-                move(direction);//move(direction) is repeated so player doesn't move when interacting with trophy when requirments not met
+                //move(direction);//move(direction) is repeated so player doesn't move when interacting with trophy when requirments not met
             }
         }
     }
 
-    public boolean isValid(int size, String direction) { //check grid boundaries
+    public boolean isValid(int size, String direction) { //based on direction, returns true or false, depending on the direction, and if it violates the allowed grid
         if (direction.equals("w") && getY() + 1 >= size) {
             return false;
         }
