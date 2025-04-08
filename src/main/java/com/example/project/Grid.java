@@ -14,6 +14,7 @@ public class Grid {
         }
     }
 
+    //get methods
     public Sprite[][] getGrid(){ 
         return grid;
     }
@@ -22,7 +23,7 @@ public class Grid {
         return size;
     }
 
-    public void placeSprite(Sprite s) { //place sprite in new spot
+    public void placeSprite(Sprite s) { //place sprite in new spot, based on its x and y
         grid[size - s.getY() - 1][s.getX()] = s; //first bracket is inverse(goes from top to bottom), while second is the same (both move from left to right)
     }
     public void placeSprite(Sprite s, String direction) { //place sprite in a new spot based on direction

@@ -55,7 +55,9 @@ public class Game{
                 }
             }
             player.interact(grid.getGrid().length, input, treasures.length, obj); //based on the object, update variables
-            player.move(input); //move player
+            if (player.isValid(size, input) && !(obj instanceof Trophy)) {
+                player.move(input); //move player
+            }
             grid.placeSprite(player, input); //updates the grid to the updated information
 
             //used for debugging
@@ -81,10 +83,10 @@ public class Game{
         Enemy enemy2 = new Enemy(8,1);
         Treasure treasure1 = new Treasure(4, 0);
         Treasure treasure2 = new Treasure(0, 4);
-        treasures = new Treasure[2];
+        treasures = new Treasure[2];//needed to get the length of the list, thus getting the number of treasure
         treasures[0] = treasure1;
         treasures[1] = treasure2;
-        enemies = new Enemy[2];
+        enemies = new Enemy[2]; //needed to get the length of the list, thus getting the number of enemies
         enemies[0] = enemy1;
         enemies[1] = enemy2;
         grid.placeSprite(player);

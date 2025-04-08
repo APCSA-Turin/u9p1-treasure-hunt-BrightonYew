@@ -38,5 +38,5 @@ public class Sprite {
     public void interact() { //you can leave this empty
             // Default behavior (can be overridden by subclasses)
     }
-    public String getEmoji() { return ""; }
+    public String getEmoji() { return "";}
 }
